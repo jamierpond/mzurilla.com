@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const TARGET_DOMAIN = 'https://emilydzurilla.com'
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const currentHost = req.nextUrl.host
 
   // Prevent infinite redirects
