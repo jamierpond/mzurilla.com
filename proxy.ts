@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const TARGET_DOMAIN = 'https://emilydzurilla.com'
-const MOUSE_DOMAIN = 'https://mouse.emilydzurilla.com'
+const MOUSE_DOMAIN = 'https://play.unity.com/en/games/0e181892-2ede-44ea-afb4-dcaef32f68b8/mouse-house'
 
 const MAPPINGS: Record<string, string> = {
   "/mouse": MOUSE_DOMAIN,
@@ -23,6 +23,7 @@ export function proxy(req: NextRequest) {
     redirectUrl.search = req.nextUrl.search
     return NextResponse.redirect(redirectUrl, 301)
   }
+
 
   const redirectUrl = new URL(req.nextUrl.pathname + req.nextUrl.search, TARGET_DOMAIN)
   return NextResponse.redirect(redirectUrl, 301)
